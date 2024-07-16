@@ -1,6 +1,6 @@
-from app import app, db
+from server.app import app, db
 from flask import request, jsonify
-from models import Product, User, Cart
+from server.models import Product, User, Cart
 
 @app.route('/products', methods=['GET', 'POST'])
 def manage_products():
@@ -29,4 +29,6 @@ def delete_product(id):
     else:
         return jsonify({'message': 'Product not found'}), 404
 
-# Additional routes for users, cart, and payments can be added similarly
+
+
+

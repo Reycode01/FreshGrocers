@@ -12,7 +12,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-import routes
+# Import routes after initializing app and db
+from server import routes
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
+
