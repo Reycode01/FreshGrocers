@@ -1,0 +1,21 @@
+[build]
+command = "npm run build"
+publish = "build/"
+
+[build.environment]
+PYTHON_VERSION = "3.8.13"
+PIPENV_CACHE_DIR = "./.pipenv_cache"
+
+[build.dependencies]
+commands = [
+  "pip install pipenv",
+  "pipenv install --deploy --system"
+]
+
+[build.cache]
+paths = [
+  ".pipenv_cache",
+  "Pipfile.lock"
+]
+
+
