@@ -1,0 +1,12 @@
+version: '3'
+services:
+  frontend:
+    build: ./frontend  # Path to your React frontend directory
+    ports:
+      - "3000:3000"    # Map frontend port
+  backend:
+    build: .            # Path to your Flask backend directory
+    ports:
+      - "5000:5000"    # Map backend port
+    depends_on:
+      - frontend       # Ensure frontend is started before backend
